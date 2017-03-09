@@ -29,12 +29,11 @@ var express = require('express');
 var app = express();
 var port = 8080;
 
+// router for app
+var router = require('./app/routes');
+app.use('/',router);
+
 // start the server
 app.listen(port,function(){
     console.log('app started');
-});
-
-// route the app
-app.get('/',function(req,res){
-    res.send('hello World')
 });
